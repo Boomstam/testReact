@@ -1,12 +1,14 @@
 import './App.css';
 import {CATEGORIES_DATA} from "./data/data";
-import {Category} from "./components/Category";
+import {MenuNavbar} from "./components/MenuNavbar";
+import {MenuCard} from "./components/MenuCard";
+import "./services/firestore";
 
 function App() {
   return (
     <div>
-      <h1>Menu</h1>
-        {CATEGORIES_DATA.map(c => <Category category={c} key={c.name} />)}
+        <MenuNavbar />
+        <MenuCard menuData={CATEGORIES_DATA}/>
     </div>
   );
 }
